@@ -1,0 +1,13 @@
+easy-gates:
+  - app: "app1"
+    gates:
+    -
+      value: OPEN
+      key: my.app
+      exclusive: false
+  - app: "app2"
+    gates:
+      -
+        value: OPEN
+        key: my.app
+        exclusive: false

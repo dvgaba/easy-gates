@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>easy-gates</artifactId>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>spotless-maven-plugin</artifactId>
+          <configuration>
+            <!-- optional: limit format enforcement to just the files changed by this feature branch -->
+            <formats>
+              <!-- you can define as many formats as you want, each is independent -->
+              <format>
+                <!-- define the files to apply to -->
+                <endWithNewline/>
+                <!-- define the steps to apply to those files -->
+                <includes>
+                  <include>*.md</include>
+                  <include>.gitignore</include>
+                </includes>
+                <indent>
+                  <spacesPerTab>4</spacesPerTab>
+                  <tabs>true</tabs>
+                </indent>
+                <trimTrailingWhitespace/>
+              </format>
+            </formats>
+            <java>
+              <!-- no need to specify files, inferred automatically, but you can if you want -->
+
+              <!-- apply a specific flavor of google-java-format and reflow long strings -->
+              <googleJavaFormat>
+                <reflowLongStrings>true</reflowLongStrings>
+                <style>AOSP</style>
+                <version>1.15</version>
+              </googleJavaFormat>
+
+              <!-- make sure every file has the following copyright header.
+                optionally, Spotless can set copyright years by digging
+                through git history (see "license" section below) -->
+              <licenseHeader>
+                <content>/* (C)$YEAR */
+                </content>  <!-- or <file>${project.basedir}/license-header</file> -->
+              </licenseHeader>
+            </java>
+            <!-- define a language-specific format -->
+            <ratchetFrom>origin/main</ratchetFrom>
+          </configuration>
+          <groupId>com.diffplug.spotless</groupId>
+          <version>${spotless.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>jackson-annotations</artifactId>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>junit-jupiter</artifactId>
+        <groupId>org.junit.jupiter</groupId>
+        <scope>test</scope>
+        <version>${jupiter.version}</version>
+      </dependency>
+
+    </dependencies>
+
+
+  </dependencyManagement>
+  <groupId>org.example</groupId>
+  <modelVersion>4.0.0</modelVersion>
+  <modules>
+    <module>easy-gates-core</module>
+    <module>easy-gates-github</module>
+    <module>easy-gates-yaml</module>
+  </modules>
+
+  <packaging>pom</packaging>
+
+  <properties>
+    <jackson.version>2.13.3</jackson.version>
+    <jupiter.version>5.9.0</jupiter.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <spotless.version>2.25.0</spotless.version>
+  </properties>
+
+  <version>1.0-SNAPSHOT</version>
+
+
+</project>

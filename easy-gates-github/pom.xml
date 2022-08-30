@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>easy-gates-github</artifactId>
+  <dependencies>
+    <dependency>
+      <artifactId>org.eclipse.jgit</artifactId>
+      <groupId>org.eclipse.jgit</groupId>
+      <version>6.2.0.202206071550-r</version>
+    </dependency>
+    <dependency>
+      <artifactId>org.eclipse.jgit.ssh.jsch</artifactId>
+      <groupId>org.eclipse.jgit</groupId>
+      <version>6.2.0.202206071550-r</version>
+    </dependency>
+    <dependency>
+      <artifactId>easy-gates-core</artifactId>
+      <groupId>org.example</groupId>
+      <scope>compile</scope>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <scope>compile</scope>
+      <version>1.18.22</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>5.9.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>easy-gates-yaml</artifactId>
+      <groupId>org.example</groupId>
+      <scope>compile</scope>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+  </dependencies>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>easy-gates</artifactId>
+    <groupId>org.example</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+
+</project>
